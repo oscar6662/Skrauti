@@ -1,27 +1,24 @@
-.footer {
-  height:15vh;
-  width:100%;
+.footer, .prefooter {
+  min-height:30vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.prefooter {
   background: black;
-  &__content{
-    max-width: 1000px;
-    height:100%;
-    margin: 0 auto;
+  li {
+    color: white;
+    list-style: none;
+  }
+}
+
+.footer {
+  img {
+    height:50px;
+  }
+  &__socials {
+    margin-top: 2rem;
     display:flex;
     justify-content: space-around;
-    align-items: center;
-  }
-  li {
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.8;
-  }
-  &__left {
-    li{ 
-      list-style: none;
-    }
-    
-  }
-  &__right {
-
   }
 }

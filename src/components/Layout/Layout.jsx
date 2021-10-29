@@ -9,12 +9,10 @@ export default function Layout({ children }) {
 
 
   return (
-      <div className={s.layout}>
-          <>
-            <Navbar/>
-            {children}
-          </>
-        <Footer></Footer>
-      </div>
+    <div className={s.layout}>
+      <Navbar/>
+        {children}
+      <Footer></Footer>
+    </div>
   );
 }
