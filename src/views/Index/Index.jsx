@@ -14,21 +14,23 @@ export default function Index() {
         <div className={`${s.one__grid}`}>
           <div className={`${s.one__content}`}>
             <div className={s.one__title}><h1>Velkominn í</h1><h1>Skrauti<p>.</p></h1></div>
+            <a href="#three">
             <button>
-                SJÁ MEIRA
+              SJÁ MEIRA
             </button>
+            </a>
           </div>
         </div>  
       </section>
 
-      <section className={s.three}>
+      <section className={s.three} id="three">
         <div className={s.three__title}>
           <h1>Um okkur</h1>
         </div>
         <div className={s.three__boxes}>
           <div >
             <img src = {require('../../assets/img/stjorn.jpg').default} alt = ""/>
-            <a href="/sjorn">
+            <a href="/stjorn">
               Stjórn og starfsemi
             </a>
             <p>
