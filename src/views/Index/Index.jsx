@@ -13,7 +13,7 @@ export default function Index() {
       <section className={`${s.one}`}>
         <div className={`${s.one__grid}`}>
           <div className={`${s.one__content}`}>
-            <div className={s.one__title}><h1>Velkominn í</h1><h1>Skrauti<p>.</p></h1></div>
+            <div className={s.one__title}><h1>Skrauti</h1><h1>Náttúruverndarfélag<p>.</p></h1></div>
             <a href="#three">
             <button>
               SJÁ MEIRA
