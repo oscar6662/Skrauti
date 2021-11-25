@@ -1,0 +1,42 @@
+.one {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(150, 150, 150, 0.6)), url("../../assets/img/banner6.png");
+  height: calc(100vh);
+  min-height: calc(100vh);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 100%;
+  position: relative;
+  display:flex;
+  justify-content: center;
+
+  &__content {
+    position: absolute;
+    @media(max-width: 1000px) {
+      margin: 100px 1rem;
+    }
+    padding: 0 20px;
+    background:rgba(255, 255, 255, 0.856);
+    border-radius: 5px;
+    height: auto;
+    max-width: 1000px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
