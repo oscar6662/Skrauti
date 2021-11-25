@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import { jwtOptions } from './login.js';
 import {
   comparePasswords,
-  findByEmail,
+  findByUsername,
 } from './user.js';
 import { isNotEmptyString } from '../utils/utils.js';
 
@@ -18,14 +18,14 @@ const {
   JWT_TOKEN_LIFETIME: tokenLifetime = defaultTokenLifeTime,
 } = process.env;
 
-router.post('/admin', async (req, res) => {
-  const { email, password } = req.body;
+router.post('/api/admin', async (req, res) => {
+  const { username, password } = req.body;
 
-  if (!isNotEmptyString(email) || !isNotEmptyString(password)) {
+  if (!isNotEmptyString(username) || !isNotEmptyString(password)) {
     return res.status(400).json({ error: 'Email or password cannot be empty.' });
   }
 
-  const user = await findByEmail(email);
+  const user = await findByUsername(username);
   if (!user) {
     return res.status(400).json({ error: 'Email not found' });
   }
