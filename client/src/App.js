@@ -6,7 +6,7 @@ import Index from "./views/Index/Index";
 import Layout from "./components/Layout/Layout";
 import Stjorn from "./views/Stjorn/Stjorn";
 import Greinar from "./views/Greinar/Greinar";
-import Admin from "./views/Admin/Admin.jsx";
+import Admin from "./views/Admin/Admin";
 
 export default function App() {
 
@@ -16,7 +16,7 @@ export default function App() {
         <Route exact path="/" children={<Index />} />
         <Route exact path="/stjorn" children={<Stjorn />} />
         <Route exact path="/greinar" children={<Greinar />} />
-        <Route exact path="/admin" children={ <Greinar/> } />
+        <Route exact path="/admin" children={ <Admin/> } />
         <Redirect from="*" to="/" />
       </Switch>
     </Layout>
