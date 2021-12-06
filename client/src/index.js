@@ -7,7 +7,7 @@ import App from './App';
 import './assets/styles/config.scss';
 
 render((
-  <BrowserRouter>
-      <App/>
-  </BrowserRouter>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
 ), document.getElementById('root'));

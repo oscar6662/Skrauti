@@ -98,17 +98,17 @@ export async function getUser(username) {
   return null;
 }
 
-export async function createUser(username, email, password, admin = false) {
+export async function createUser(username, email, password) {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const q = `
       INSERT INTO
-        users (username, email, password, admin)
+        users (username, email, password)
       VALUES
-        ($1, $2, $3, $4)
-      RETURNING id, username, email, admin`;
+        ($1, $2, $3)
+      RETURNING id, username, email`;
 
-  const values = [username, email, hashedPassword, admin];
+  const values = [username, email, hashedPassword];
   const result = await query(q, values);
 
   return result.rows[0];

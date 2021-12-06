@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
-import { jwtOptions } from './login.js';
+import { checkAuthentication, jwtOptions, requireAuthentication } from './login.js';
 import {
   comparePasswords,
   findByUsername,
@@ -20,24 +20,24 @@ const {
 
 router.post('/api/admin', async (req, res) => {
   const { username, password } = req.body;
-
   if (!isNotEmptyString(username) || !isNotEmptyString(password)) {
-    return res.status(400).json({ error: 'Email or password cannot be empty.' });
+    return res.status(400).json({ error: 'Username or password cannot be empty.' });
   }
 
   const user = await findByUsername(username);
   if (!user) {
-    return res.status(400).json({ error: 'Email not found' });
+    return res.status(400).json({ error: 'Username not found' });
   }
-
   const rightPassword = await comparePasswords(password, user.password);
-
   if (rightPassword) {
     const payload = { id: user.id };
     const tokenOptions = { expiresIn: parseInt(tokenLifetime, 10) };
     const token = jwt.sign(payload, jwtOptions.secretOrKey, tokenOptions);
     return res.json({ token });
   }
-
   return res.status(401).json({ error: 'Invalid password' });
+});
+
+router.get('/api/isauthenticated', requireAuthentication, (req, res)=> {
+  return res.json('true');
 });

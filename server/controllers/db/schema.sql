@@ -8,9 +8,10 @@ CREATE TABLE IF NOT EXISTS users (
   admin boolean default true
 );
 
-DROP TABLE IF EXISTS candidates CASCADE;
+DROP TABLE IF EXISTS greinar CASCADE;
 
 CREATE TABLE IF NOT EXISTS greinar (
   title varchar(1024) not null,
-  link varchar(1024) not null
+  link varchar(1024) not null,
+  textlink varchar(1024) not null
 );

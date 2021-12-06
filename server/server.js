@@ -5,6 +5,7 @@ import path, {dirname} from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { router as userRouter } from './controllers/user/users.js';
+import {query} from './controllers/db/db.js';
 
 dotenv.config();
 
@@ -17,6 +18,16 @@ app.use(cors());
 app.use(express.json());
 app.use(passport.initialize());
 app.use(userRouter);
+
+app.get('/api/greinar', async(req, res) => {
+  try {
+    const q = 'SELECT * FROM greinar';
+    const r  = await query(q);
+    return res.json(r.rows);
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/../client/build/index.html'));

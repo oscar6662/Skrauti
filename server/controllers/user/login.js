@@ -48,7 +48,7 @@ export function requireAuthentication(req, res, next) {
         const error = info.name === 'TokenExpiredError'
           ? 'expired token' : 'invalid token';
 
-        return res.status(401).json({ error });
+        return res.json(false);
       }
 
       // Látum notanda vera aðgengilegan í rest af middlewares
