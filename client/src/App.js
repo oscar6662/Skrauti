@@ -47,8 +47,7 @@ export default function App() {
           <Route exact path="/stjorn" element={<Stjorn />} />
           <Route exact path="/greinar" element={<Greinar />} />
           <Route exact path="/greinar/1" element={<Greinar1 />} />
-          <Route exact path="/greinar/2" element={<Greinar2 />} />
-          <Route exact path="https://www.vatnajokulsthjodgardur.is/static/files/Stjornsysla/Fundarg-stjorn/Fundaraaetlanir/alitsgerd_vonarskard_asamt_brefi_11.11.2020.pdf" element={<Greinar2 />} />
+          <Route exact path="/greinar/2" element={<Greinar2 />} />          
           {//<Route exact path="/admin" element={<Admin />} />
           }
           <Route path="*" element={<Navigate to="/" />} />

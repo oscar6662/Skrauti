@@ -18,7 +18,7 @@ export default function Greinar() {
             <a href="/greinar/2">Um Vonarskarð og svarta náttúruvernd</a>
             <Divider/>
             <h2>Álitsgerð</h2>
-        	  <a href="/greinar/3">Álitsgerð Sifjar Konráðsdóttur lögmanns um málsmeðferð varðandi Vonarskarð í Vatnajökulsþjóðgarði</a>
+        	  <a href="https://www.vatnajokulsthjodgardur.is/static/files/Stjornsysla/Fundarg-stjorn/Fundaraaetlanir/alitsgerd_vonarskard_asamt_brefi_11.11.2020.pdf">Álitsgerð Sifjar Konráðsdóttur lögmanns um málsmeðferð varðandi Vonarskarð í Vatnajökulsþjóðgarði</a>
         	</div>
         </div>
     </section>
